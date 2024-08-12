@@ -23,51 +23,8 @@ CS231n은 스탠포드 대학에서 학부 고학년생 및 대학원생을 대�
     - Download this [Youtube Playlist](https://www.youtube.com/playlist?list=PLC1qU-LWwrF64f4QKQT-Vg5Wr4qEE1Zxk) with downloader
     - If you take "4k video downloader", you can download whole lectures "at once" not "each", with Playlist.      
     
-2. and Enjoy videos with Subtitles  
-
-        root
-        └── eng
-            └── Subtitles in English.
-        └── kor 
-            └── Subtitles in Korean.
-
 ----------
 
-## Update Note
-    Welcome to Pull Request
-
-    1. Update News
-    ...
-    2018.05.23 - Complete Lecture 6(draft)
-    2018.06.14 - Complete Lecture 7(draft)
-    2018 06 26 - Complete Lecture 8(draft) 
-    2018 07 27 - Complete Lecture 1(1st Revision) 
-    2018 07 09 - Complete Lecture 9(draft) 
-    2018 07 16 - Complete Lecture 2(1st Revision) 
-    2018 07 30 - Complete Lecture 10(draft) 
-    2018 08 13 - Complete Lecture 11(draft) 
-    2018 09 24 - Complete Lecture 12(draft)
-    2018 10 06 - Complete Lecture 13(draft)
-    2018 12 31 - Complete Lecture 14(draft)
-
-    1. Milestone
-    Lecture 01 : Complete(draft + 1st Revision) 
-    Lecture 02 : Complete(draft + 1st Revision)
-    Lecture 03 : Complete(draft)
-    Lecture 04 : Complete(draft)
-    Lecture 05 : Complete(draft)
-    Lecture 06 : Complete(draft)
-    Lecture 07 : Complete(draft)
-    Lecture 08 : Complete(draft)
-    Lecture 09 : Complete(draft)
-    Lecture 10 : Complete(draft)
-    Lecture 11 : Complete(draft)
-    Lecture 12 : Complete(draft)
-    Lecture 13 : Complete(draft)
-    Lecture 14 : Complete(draft)
-    Invited Talk 1 : not yet :(
-    Invited Talk 2 : not yet :(
-----------
 ## Table of Contents (CS231n 2017)
 
 
