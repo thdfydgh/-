@@ -1,16 +1,19 @@
+출처 : https://github.com/visionNoob/CS231N_17_KOR_SUB
+출처 : https://duemoo.github.io/ai/2022/01/11/studying_AI-CS231n/
+
 # GDSC AI PART SYLLABUS
 Translation project of [CS231n 2017 lecture video](https://www.youtube.com/playlist?list=PLC1qU-LWwrF64f4QKQT-Vg5Wr4qEE1Zxk)  
 Also see [CS231n Website](http://cs231n.stanford.edu/)
 
 ### 왜 cs231n?
-
+<pre>
 CS231n은 스탠포드 대학에서 학부 고학년생 및 대학원생을 대상으로(!) 개설된 인공 신경망 및 컴퓨터 비전 강의이다. 이 강의가 워낙 명강의로 잘 알려졌기 때문에, 이제는 한국에서도 AI를 공부하고자 할 때 추천하는 강의로 자주 등장하곤 한다. 하지만 강의의 대상이 대상인 만큼, 입문자에게 자주 추천되는 것에 비해 AI를 처음 시작해보려는 사람이 준비 없이 바로 듣기에는 살짝 난이도가 있는 편이다.
 
 물론 스탠포드 재학생이 아니라면, 해당 강의를 정식으로 수강하며 여러 지원(채점, 질의응답, 프로젝트를 위한 하드웨어 지원 등)을 받는 것이 불가능하다. 하지만 감사하게도 유튜브에 2017년도 강의 영상이 업로드되어 있어, 전 세계의 누구나 무료로 CS231n 강의를 들으며 공부할 수 있다! 필자는 위의 영상을 보며 공부했지만, 영어가 익숙하지 않은 경우 Kyoseok Song님의 한국어 해설 영상을 함께 본다면 큰 도움이 될 수 있을 것 같다. 또한, 강의를 듣다 보면 과제에 대한 이야기가 나오는데, 과제는 총 3개로 구성되어 있으며 이곳에서 다운로드해서 직접 풀어볼 수 있다.
-
-[2017년도 강의 영상](https://youtu.be/vT1JzLTH4G4)
-[한국어 해설 영상](https://youtu.be/vT1JzLTH4G4)
-[과제 링](https://cs231n.github.io/)
+</pre>
+[2017년도 강의 영상](https://youtu.be/vT1JzLTH4G4)<br>
+[한국어 해설 영상](https://youtu.be/vT1JzLTH4G4)<br>
+[과제 링크](https://cs231n.github.io/)
 
 
 ## Usage
