@@ -1,0 +1,160 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Node 구조체 정의
+typedef struct Node {
+    int degree;
+    int coefficient;
+    struct Node *next;  // 다음 노드를 가리키는 포인터
+    struct Node *prev;  // 이전 노드를 가리키는 포인터
+} Node;
+
+// 함수 원형 선언
+Node* inputpoly(void);
+void printNode(Node *head);
+void freeList(Node *head);
+
+// main 함수: 함수들을 테스트하는 루틴
+int main() {
+    Node *poly = inputpoly();
+    if (poly == NULL) {
+        printf("다항식이 비어있습니다.\n");
+    } else {
+        printf("입력된 다항식: ");
+        printNode(poly);
+    }
+    // 메모리 해제
+    freeList(poly);
+    return 0;
+}
+
+// inputpoly 함수: 사용자로부터 다항식 입력을 받아 이중 연결 리스트로 생성
+Node* inputpoly(void) {
+    Node *head = NULL;
+    Node *tail = NULL;
+    
+    while (1) {
+        int degree, coefficient;
+        printf("Input (degree) (coefficient): ");
+        if (scanf("%d %d", &degree, &coefficient) != 2) {
+            // 잘못된 입력 처리
+            printf("잘못된 입력입니다. 다시 입력해주세요.\n");
+            // 입력 스트림을 비웁니다.
+            int ch;
+            while ((ch = getchar()) != '\n' && ch != EOF);
+            continue;
+        }
+        
+        if (degree < 0 && coefficient < 0) {
+            printf("Done!!\n");
+            break;
+        }
+        
+        if ((degree < 0 && coefficient >=0) || (degree >=0 && coefficient <0)) {
+            // 하나만 음수인 경우 무시하고 다시 입력
+            printf("하나의 값이 음수이므로 무시하고 다시 입력합니다.\n");
+            continue;
+        }
+        
+        // 새로운 노드 생성
+        Node *newNode = (Node*)malloc(sizeof(Node));
+        if (newNode == NULL) {
+            printf("메모리 할당 실패!\n");
+            freeList(head);
+            exit(1);
+        }
+        newNode->degree = degree;
+        newNode->coefficient = coefficient;
+        newNode->next = NULL;
+        newNode->prev = NULL;
+        
+        // 리스트에 노드 추가
+        if (head == NULL) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            // 차수 내림차순으로 삽입
+            Node *current = head;
+            while (current != NULL && current->degree > degree) {
+                current = current->next;
+            }
+            if (current == head && current->degree < degree) {
+                // 새로운 노드를 맨 앞에 삽입
+                newNode->next = head;
+                head->prev = newNode;
+                head = newNode;
+            } else if (current == NULL) {
+                // 새로운 노드를 맨 뒤에 삽입
+                tail->next = newNode;
+                newNode->prev = tail;
+                tail = newNode;
+            } else {
+                // 중간에 삽입
+                newNode->next = current;
+                newNode->prev = current->prev;
+                if (current->prev != NULL) {
+                    current->prev->next = newNode;
+                }
+                current->prev = newNode;
+            }
+        }
+    }
+    
+    return head;
+}
+
+// printNode 함수: 이중 연결 리스트로 표현된 다항식을 출력
+void printNode(Node *head) {
+    if (head == NULL) {
+        printf("0\n");
+        return;
+    }
+    
+    Node *current = head;
+    int first = 1; // 첫 번째 항인지 여부
+    
+    while (current != NULL) {
+        if (current->coefficient != 0) { // 계수가 0인 항은 생략
+            if (!first && current->coefficient > 0) {
+                printf(" + ");
+            } else if (current->coefficient < 0) {
+                if (!first)
+                    printf(" - ");
+                else
+                    printf("-");
+            }
+            
+            // 절대값을 사용하여 부호 처리
+            int abs_coeff = current->coefficient > 0 ? current->coefficient : -current->coefficient;
+            
+            if (current->degree == 0) {
+                printf("%d", abs_coeff);
+            } else if (current->degree == 1) {
+                if (abs_coeff != 1)
+                    printf("%dx", abs_coeff);
+                else
+                    printf("x");
+            } else {
+                if (abs_coeff != 1)
+                    printf("%dx^%d", abs_coeff, current->degree);
+                else
+                    printf("x^%d", current->degree);
+            }
+            first = 0;
+        }
+        current = current->next;
+    }
+    printf("\n");
+}
+
+// freeList 함수: 이중 연결 리스트의 메모리를 해제
+void freeList(Node *head) {
+    Node *current = head;
+    while (current != NULL) {
+        Node *temp = current;
+        current = current->next;
+        free(temp);
+    }
+}
+
+
