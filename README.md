@@ -1,3 +1,11 @@
+https://docs.google.com/presentation/d/1nGnTGGFYSAE3BVp9oJaGWTPMXyXNSTf1nZ2djPZlgY8/edit?usp=sharing
+
+
+
+
+
+
+
 출처 : https://github.com/visionNoob/CS231N_17_KOR_SUB
 출처 : https://duemoo.github.io/ai/2022/01/11/studying_AI-CS231n/
 
